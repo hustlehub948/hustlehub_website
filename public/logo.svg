@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for left ribbon -->
+    <linearGradient id="leftGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A8DFF"/>
+      <stop offset="100%" stop-color="#337DFF"/>
+    </linearGradient>
+    <!-- Gradient for right ribbon -->
+    <linearGradient id="rightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F7DFF"/>
+      <stop offset="100%" stop-color="#6C63FF"/>
+    </linearGradient>
+    <!-- Gradient for middle ribbon -->
+    <linearGradient id="middleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A8DFF"/>
+      <stop offset="100%" stop-color="#6C63FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left ribbon -->
+  <path d="M160 100c-40 0-60 20-60 60v192c0 40 20 60 60 60s60-20 60-60V292h72v60c0 40 20 60 60 60s60-20 60-60V160c0-40-20-60-60-60s-60 20-60 60v56h-72v-56c0-40-20-60-60-60z" fill="url(#middleGradient)"/>
+  
+  <!-- Overlay shading for left -->
+  <path d="M160 100c-40 0-60 20-60 60v192c0 40 20 60 60 60 22 0 42-8 52-28V128c-10-20-30-28-52-28z" fill="url(#leftGradient)"/>
+  
+  <!-- Overlay shading for right -->
+  <path d="M352 100c-22 0-42 8-52 28v256c10 20 30 28 52 28 40 0 60-20 60-60V160c0-40-20-60-60-60z" fill="url(#rightGradient)"/>
+</svg>

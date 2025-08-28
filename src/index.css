@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply text-hhDark bg-white font-sans; }
+}
+
+@layer components {
+  .container { @apply w-[92vw] max-w-container mx-auto; }
+  .btn { @apply inline-flex items-center gap-2 px-4 py-3 rounded-lg text-white font-semibold shadow-hh transition; background-image: theme('backgroundImage.hhGrad'); }
+  .btn:hover { @apply -translate-y-0.5 shadow-lg; }
+  .btn-outline { @apply inline-flex items-center gap-2 px-4 py-3 rounded-lg font-semibold border-2; border-image: theme('backgroundImage.hhGrad') 1; }
+  .card { @apply bg-white border border-hhBorder rounded-hh shadow-hh p-5; }
+  .section { @apply py-14 md:py-24; }
+  .hero-bg { background-image: theme('backgroundImage.hhHero'); }
+  .logo-square { @apply w-9 h-9 rounded-lg; background-image: theme('backgroundImage.hhGrad'); }
+}
