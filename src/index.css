@@ -6,7 +6,8 @@
   html, body, #root { height: 100%; }
   body { @apply text-hhDark bg-white font-sans; }
 }
-
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 84px; } /* match your header height */
 @layer components {
   .container { @apply w-[92vw] max-w-container mx-auto; }
   .btn { @apply inline-flex items-center gap-2 px-4 py-3 rounded-lg text-white font-semibold shadow-hh transition; background-image: theme('backgroundImage.hhGrad'); }
