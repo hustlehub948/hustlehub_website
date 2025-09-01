@@ -6,28 +6,15 @@ import { motion } from "framer-motion";
 
 // --- Stats ---
 const stats = [
-  { value: 120, suffix: "+", label: "Projects Delivered" },
-  { value: 240, suffix: "%", label: "Avg. ROI Growth" },
-  { value: 12, suffix: "+", label: "Countries Served" },
+  { value: 25, suffix: "+", label: "Projects Delivered" },
+  { value: 97, suffix: "%", label: "Client Satisfaction" },
+  { value: 99, suffix: "%", label: "On-Time Project Delivery" },
   { value: 95, suffix: "%", label: "Client Retention" },
 ];
 
-// --- Logos ---
-const logos = ["Acme", "Aurora", "Nimbus", "Vertex"];
+
 
 // --- Testimonials ---
-const testimonials = [
-  {
-    quote: "HustleHub helped us scale our digital presence and boosted ROI by 3x within months.",
-    name: "Jane Doe",
-    role: "Marketing Director, Acme Corp",
-  },
-  {
-    quote: "The team is incredibly reliable and innovative — our go-to digital partner.",
-    name: "John Smith",
-    role: "Founder, Aurora Labs",
-  },
-];
 
 // --- Team ---
 const coreTeam = [
@@ -134,35 +121,6 @@ export default function About() {
           >
             <CountUp to={s.value} suffix={s.suffix} start={inView} />
             <div className="mt-1 text-sm text-hhDark/70">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Logos */}
-      <div className="mt-12 text-center">
-        <p className="text-sm text-hhDark/60 mb-4">Trusted by teams at</p>
-        <div className="flex flex-wrap justify-center gap-6">
-          {logos.map((logo, i) => (
-            <div
-              key={i}
-              className="rounded-xl backdrop-blur-md bg-white/30 border border-white/20 px-4 py-2 text-sm font-semibold text-hhDark shadow-lg"
-            >
-              {logo}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Testimonials */}
-      <div className="mt-16 grid gap-6 md:grid-cols-2">
-        {testimonials.map((t, i) => (
-          <div
-            key={i}
-            className="rounded-2xl backdrop-blur-md bg-white/30 border border-white/20 p-6 shadow-lg"
-          >
-            <p className="text-hhDark/80 italic mb-3">“{t.quote}”</p>
-            <div className="text-sm font-semibold text-hhDark">{t.name}</div>
-            <div className="text-xs text-hhDark/60">{t.role}</div>
           </div>
         ))}
       </div>
