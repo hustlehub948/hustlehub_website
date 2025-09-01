@@ -31,9 +31,7 @@ export default function Hero() {
               variants={fadeUp}
               className="space-y-6"
             >
-              <span className="inline-block px-4 py-1 rounded-full bg-white/20 text-hhPurple text-sm font-medium backdrop-blur-sm">
-                Full-stack digital services
-              </span>
+
 
               <h1 className="text-4xl md:text-5xl font-extrabold text-hhDark">
                 HustleHub — Your Digital Growth Partner
