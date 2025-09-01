@@ -1,9 +1,16 @@
-type Payload = { name: string; email: string; company?: string; message: string; };
+type Payload = { name: string; email: string; company?: string; message: string };
 
 export async function sendContactEmail(payload: Payload) {
-  const to = import.meta.env.VITE_CONTACT_EMAIL_TO || 'hustlehub948@gmail.com';
-  console.log('Contact submission →', { to, ...payload });
-  // Example server POST:
-  // await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ to, ...payload }) });
+  const res = await fetch("https://formspree.io/f/xpwjllya", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    console.error("Formspree submission failed", await res.text());
+    return false;
+  }
+
   return true;
 }
