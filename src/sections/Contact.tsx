@@ -71,7 +71,7 @@ export default function Contact() {
           />
         </div>
 
-        {/* Phone Input with Country Selector */}
+        {/* ✅ Phone Input with Country Selector */}
         <PhoneInput
           country={'in'} // default country (India)
           value={phone}
@@ -81,8 +81,11 @@ export default function Contact() {
             required: true,
           }}
           containerClass="!w-full"
-          inputClass="!w-full !rounded-xl !backdrop-blur-md !bg-white/30 !border !border-white/20 !px-4 !py-3 !text-sm !shadow-lg focus:!outline-none focus:!ring-2 focus:!ring-hhPurple/60 !transition"
+          inputClass="!w-full !rounded-xl !backdrop-blur-md !bg-white/30 !border !border-white/20 !pl-14 !pr-4 !py-3 !text-sm !shadow-lg focus:!outline-none focus:!ring-2 focus:!ring-hhPurple/60 !transition"
           buttonClass="!bg-white/30 !border !border-white/20 !rounded-l-xl"
+          countryCodeEditable={false}   // ✅ keeps +XX fixed
+          enableSearch={true}           // ✅ allow searching countries
+          placeholder="+91 98765 43210" // ✅ proper formatted placeholder
         />
 
         <input

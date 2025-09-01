@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import heroAnimation from "../../public/hero.json"; // adjust path if needed
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -54,20 +56,19 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* RIGHT SHOWCASE (glass card for image) */}
+            {/* RIGHT SHOWCASE (Lottie only, no glass card behind) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex justify-center"
             >
-              <div className="rounded-2xl border border-white/30 bg-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] p-6">
-                <img
-                  src="/heropic.png" // <-- replace with your actual image path
-                  alt="HustleHub showcase"
-                  className="h-56 md:h-64 w-full object-cover rounded-xl"
-                />
-              </div>
+              <Lottie
+                animationData={heroAnimation}
+                loop={true}
+                className="h-90 md:h-100 w-full max-w-md" // ✅ bigger Lottie
+              />
             </motion.div>
           </div>
         </div>
