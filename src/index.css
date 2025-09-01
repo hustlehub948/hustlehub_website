@@ -4,16 +4,29 @@
 
 @layer base {
   html, body, #root { height: 100%; }
-  body { @apply text-hhDark bg-white font-sans; }
+  /* Change bg-white → bg-gradient */
+  body { @apply text-hhDark font-sans; }
+  body { @apply bg-gradient; }
 }
+
 html { scroll-behavior: smooth; }
 section[id] { scroll-margin-top: 84px; } /* match your header height */
+
 @layer components {
+  .bg-gradient {
+    background: linear-gradient(135deg, #e8f1ff 0%, #f0eaff 100%);
+  }
   .container { @apply w-[92vw] max-w-container mx-auto; }
   .btn { @apply inline-flex items-center gap-2 px-4 py-3 rounded-lg text-white font-semibold shadow-hh transition; background-image: theme('backgroundImage.hhGrad'); }
   .btn:hover { @apply -translate-y-0.5 shadow-lg; }
   .btn-outline { @apply inline-flex items-center gap-2 px-4 py-3 rounded-lg font-semibold border-2; border-image: theme('backgroundImage.hhGrad') 1; }
-  .card { @apply bg-white border border-hhBorder rounded-hh shadow-hh p-5; }
+  .card {
+  @apply border rounded-hh shadow-hh p-5;
+  background: rgba(255, 255, 255, 0.2); /* translucent */
+  border-color: rgba(255, 255, 255, 0.3); /* soft border */
+  backdrop-filter: blur(12px); /* frosted blur */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+}
   .section { @apply py-14 md:py-24; }
   .hero-bg { background-image: theme('backgroundImage.hhHero'); }
   .logo-square { @apply w-9 h-9 rounded-lg; background-image: theme('backgroundImage.hhGrad'); }

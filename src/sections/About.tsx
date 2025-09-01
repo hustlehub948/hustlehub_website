@@ -35,22 +35,22 @@ const coreTeam = [
     name: "Bhargav Hathwar",
     role: "Founder & CEO",
     tagline: "Driving strategy, vision, and growth at HustleHub.",
-    photo: "/team/sample.jpg",
-    linkedin: "#",
+    photo: "/team/bhargav.jpg",
+    linkedin: "http://www.linkedin.com/in/g-bhargav-hathwar",
   },
   {
     name: "Pruthvi MP",
     role: "Co-Founder & Head of Security",
     tagline: "Securing digital ecosystems with trusted expertise.",
-    photo: "/team/sample.jpg",
-    linkedin: "#",
+    photo: "/team/pruthvi.jpg",
+    linkedin: "http://www.linkedin.com/in/pruthvi-mp",
   },
   {
     name: "Rahul",
     role: "Full-Stack Developer",
     tagline: "Building scalable, modern web solutions.",
-    photo: "/team/sample.jpg",
-    linkedin: "#",
+    photo: "/team/rahul.jpg",
+    linkedin: "http://www.linkedin.com/in/rahul-js",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function About() {
         {stats.map((s, i) => (
           <div
             key={i}
-            className="rounded-2xl border border-black/5 bg-white p-6 text-center shadow transition hover:-translate-y-0.5 hover:shadow-lg"
+            className="rounded-2xl backdrop-blur-md bg-white/30 border border-white/20 p-6 text-center shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
           >
             <CountUp to={s.value} suffix={s.suffix} start={inView} />
             <div className="mt-1 text-sm text-hhDark/70">{s.label}</div>
@@ -145,7 +145,7 @@ export default function About() {
           {logos.map((logo, i) => (
             <div
               key={i}
-              className="rounded-xl border border-black/5 bg-white px-4 py-2 text-sm font-semibold text-hhDark shadow"
+              className="rounded-xl backdrop-blur-md bg-white/30 border border-white/20 px-4 py-2 text-sm font-semibold text-hhDark shadow-lg"
             >
               {logo}
             </div>
@@ -156,13 +156,17 @@ export default function About() {
       {/* Testimonials */}
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {testimonials.map((t, i) => (
-          <div key={i} className="rounded-2xl border border-black/5 bg-white p-6 shadow">
+          <div
+            key={i}
+            className="rounded-2xl backdrop-blur-md bg-white/30 border border-white/20 p-6 shadow-lg"
+          >
             <p className="text-hhDark/80 italic mb-3">“{t.quote}”</p>
             <div className="text-sm font-semibold text-hhDark">{t.name}</div>
             <div className="text-xs text-hhDark/60">{t.role}</div>
           </div>
         ))}
       </div>
+
       {/* Team Section */}
       <div className="mt-20">
         <div className="mx-auto max-w-3xl text-center">
@@ -188,7 +192,7 @@ export default function About() {
               key={p.name}
               variants={fadeUp}
               custom={i}
-              className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-md"
+              className="group relative overflow-hidden rounded-2xl backdrop-blur-md bg-white/30 border border-white/20 shadow-lg ring-1 ring-black/5"
             >
               <div className="h-64 w-full overflow-hidden">
                 <img
@@ -206,7 +210,7 @@ export default function About() {
                     href={p.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 rounded-lg border border-hhPurple px-3 py-1 text-xs font-semibold text-hhPurple transition hover:bg-hhPurple hover:text-white"
+                    className="mt-3 inline-flex items-center gap-1 rounded-lg border border-hhPurple/50 px-3 py-1 text-xs font-semibold text-hhPurple transition hover:bg-hhPurple hover:text-white"
                   >
                     <Linkedin className="h-4 w-4" /> LinkedIn
                   </a>

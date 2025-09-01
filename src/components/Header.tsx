@@ -12,7 +12,7 @@ export default function Header() {
   const hoverCls = "hover:text-hhPurple hover:after:w-full";
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-hhBorder">
+    <header className="sticky top-0 z-50 bg-white/30 backdrop-blur-md border-b border-hhBorder">
       <nav className="container flex items-center justify-between py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
