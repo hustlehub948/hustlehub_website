@@ -3,21 +3,35 @@ import Button from '../components/ui/Button';
 import { sendContactEmail } from '../lib/email';
 import { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [phone, setPhone] = useState(''); // state for phone number
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+
     const data = new FormData(e.currentTarget);
-    await sendContactEmail({
+
+    const success = await sendContactEmail({
       name: String(data.get('name') || ''),
       email: String(data.get('email') || ''),
+      phone, // formatted phone number
       company: String(data.get('company') || ''),
-      message: String(data.get('message') || '')
+      message: String(data.get('message') || ''),
     });
-    setSent(true);
-    e.currentTarget.reset();
+
+    setLoading(false);
+
+    if (success) {
+      setSent(true);
+      e.currentTarget.reset();
+      setPhone('');
+    }
   };
 
   return (
@@ -57,6 +71,20 @@ export default function Contact() {
           />
         </div>
 
+        {/* Phone Input with Country Selector */}
+        <PhoneInput
+          country={'in'} // default country (India)
+          value={phone}
+          onChange={setPhone}
+          inputProps={{
+            name: 'phone',
+            required: true,
+          }}
+          containerClass="!w-full"
+          inputClass="!w-full !rounded-xl !backdrop-blur-md !bg-white/30 !border !border-white/20 !px-4 !py-3 !text-sm !shadow-lg focus:!outline-none focus:!ring-2 focus:!ring-hhPurple/60 !transition"
+          buttonClass="!bg-white/30 !border !border-white/20 !rounded-l-xl"
+        />
+
         <input
           name="company"
           placeholder="Company / Website"
@@ -69,8 +97,8 @@ export default function Contact() {
           className="rounded-xl backdrop-blur-md bg-white/30 border border-white/20 px-4 py-3 text-sm min-h-[120px] shadow-lg focus:outline-none focus:ring-2 focus:ring-hhPurple/60 transition"
         />
 
-        <Button type="submit" className="mt-2">
-          Submit Inquiry
+        <Button type="submit" className="mt-2" disabled={loading}>
+          {loading ? 'Sending…' : 'Submit Inquiry'}
         </Button>
       </motion.form>
     </Section>
