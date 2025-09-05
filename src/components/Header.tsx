@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useActiveSection from "../hooks/useScrollToHash";
+import { X } from "lucide-react";
+
 
 const SECTIONS = ["about", "works", "services", "contact"];
 
@@ -65,12 +67,20 @@ export default function Header() {
           />
         </button>
       </nav>
-
-    {/* Mobile Side Drawer */}
+{/* Mobile Side Drawer */}
 <div
   className={`fixed top-0 right-0 h-screen w-64 bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 z-50 shadow-2xl border-l border-gray-200 transform transition-transform duration-300 ease-in-out
   ${isOpen ? "translate-x-0" : "translate-x-full"}`}
 >
+  {/* Close Button */}
+  <button
+    onClick={() => setIsOpen(false)}
+    className="absolute top-4 right-4 p-2 rounded-full bg-white/60 hover:bg-white text-hhDark hover:text-hhPurple transition"
+    aria-label="Close menu"
+  >
+    <X size={24} strokeWidth={2.5} />
+  </button>
+
   <nav className="flex flex-col items-start gap-6 mt-20 px-6">
     {SECTIONS.map((id) => (
       <a
@@ -87,6 +97,7 @@ export default function Header() {
     ))}
   </nav>
 </div>
+
 
       {/* Overlay */}
       {isOpen && (
