@@ -12,12 +12,12 @@ export default function Works() {
     {
       title: "Care-Connect",
       desc: "CareConnect is a MERN-stack web application that streamlines clinic workflows by enabling online appointment booking, secure data management, and automated notifications for patients, doctors, and admins.",
-      link: "https://github.com/hustlehub948/Care-Connect.git",
+      link: "",
     },
     {
       title: "Encrypto-Box",
       desc: "EncryptoBox – Secure File Encryption System built with FastAPI, React.js, and Firebase. It lets users encrypt, decrypt, store, and share files with AES-256 encryption, secure authentication, role-based access, and cloud integration.",
-      link: "https://github.com/Deathhole/EncryptoBox.git",
+      link: "",
     },
  
   ];
