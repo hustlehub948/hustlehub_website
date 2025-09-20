@@ -62,7 +62,7 @@ export default function Works() {
                     rel="noopener noreferrer"
                     className="text-hhAccent font-semibold hover:underline"
                   >
-                    View in GitHub →
+                    View Now →
                   </a>
                 </div>
               </SwiperSlide>
